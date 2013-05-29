@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" name="cacheManager"
+    updateCheck="false" monitoring="autodetect"
+    dynamicConfig="true">
+
+	<diskStore path="quiz.cache" />
+
+	<cache name="org.hibernate.cache.internal.StandardQueryCache"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="3600"
+		timeToLiveSeconds="3600">
+	</cache>
+
+	<cache name="org.hibernate.cache.spi.UpdateTimestampsCache"
+		maxElementsInMemory="10000" eternal="true">
+	</cache>
+
+	<cache name="entity.user" eternal="false" maxElementsInMemory="10000"
+		overflowToDisk="true" diskPersistent="true" timeToIdleSeconds="0"
+		timeToLiveSeconds="300" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="entity.quiz" eternal="false" maxElementsInMemory="10000"
+		overflowToDisk="true" diskPersistent="true" timeToIdleSeconds="0"
+		timeToLiveSeconds="300" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="entity.qquMapping" eternal="false"
+		maxElementsInMemory="10000" overflowToDisk="true" diskPersistent="true"
+		timeToIdleSeconds="0" timeToLiveSeconds="300"
+		memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="entity.question" eternal="false"
+		maxElementsInMemory="10000" overflowToDisk="true" diskPersistent="true"
+		timeToIdleSeconds="0" timeToLiveSeconds="300"
+		memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="entity.presentedAnswer" eternal="false"
+		maxElementsInMemory="10000" overflowToDisk="true" diskPersistent="true"
+		timeToIdleSeconds="0" timeToLiveSeconds="300"
+		memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="entity.correctAnswer" eternal="false"
+		maxElementsInMemory="10000" overflowToDisk="true" diskPersistent="true"
+		timeToIdleSeconds="0" timeToLiveSeconds="300"
+		memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="entity.postedAnswer" eternal="false"
+		maxElementsInMemory="10000" overflowToDisk="true" diskPersistent="true"
+		timeToIdleSeconds="0" timeToLiveSeconds="300"
+		memoryStoreEvictionPolicy="LRU" />
+</ehcache>
